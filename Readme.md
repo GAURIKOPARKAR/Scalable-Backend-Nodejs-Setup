@@ -10,4 +10,11 @@ For adding that on eg. cloudinary we first keep it at our server i.e backend and
 ''' Environment variables are variables that are set outside of your application's code and are used to configure various aspects of your application's behavior. They are often used to store sensitive information or configuration settings that might change between different environments, such as development, testing, and production.'''
 
 5. Created ".env" file
-6. Created 'src' folder
+6. Created 'src' folder and in that created index.js app.js constants.js
+7. "type": "module" added in package.json
+8. npm i -D nodemon
+Install nodemon, which will keep restarting server if any change is introduced.(-D or -Dev dependency means development dependency)
+9. Added "dev": "nodemon src/index.js" in package.json
+10. Created folders in src "controllers db models utils middlewares routes"
+11. Created account on MongoDB Atlas(cloud mongobd) and created a project there.
+
