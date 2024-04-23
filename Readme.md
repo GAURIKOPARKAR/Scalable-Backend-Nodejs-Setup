@@ -20,8 +20,15 @@ Install nodemon, which will keep restarting server if any change is introduced.(
 12. Set env files with variables like port and mongodb project url
 13. Install mongoose, express and dotenv(application is going to load by environment variable, so this pkg is required)
 14. Wrote variable value and export it in constants.js because we dont want to write variable value everywhere, will use variable name in other files so, in future if we need to change it we dont need to change it everywhere.
-15. There two approach to connect to database either write everything directly in index.js(in IIFE) file or write db connection logic in db folder.
+15. Always import and config dotenv package in the first statement of the first file where execution going to get started(index.js)
+16. There two approach to connect to database either write everything directly in index.js(in IIFE) file or write db connection logic in db folder.
 
 While connecting to database always use try,catch and always use async,await
 
-16. 
+17. If you change anything in .env file then you have to restart nodemon manually.
+18. import express in app.js
+19. install cookie-parser and cors and use it in app.js
+app.use() is nothing but a middleware.
+20. Some other configurations done in app.js like urlencoded json static
+21. Created a higher order middlewear function file called asyncHandler.js in utils.
+22. Created apiError.js in utiles to handle errors, by extending Nodejs class called Errors.
