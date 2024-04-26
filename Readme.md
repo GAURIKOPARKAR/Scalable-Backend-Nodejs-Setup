@@ -32,3 +32,10 @@ app.use() is nothing but a middleware.
 20. Some other configurations done in app.js like urlencoded json static
 21. Created a higher order middlewear function file called asyncHandler.js in utils.
 22. Created apiError.js in utiles to handle errors, by extending Nodejs class called Errors.
+23. Created User and Video data models in models folder.
+24. Install package mongoose-aggregate-paginate-v2 and imoort it in data models.
+25. Install bcrypt and jsonwebtoken and use it in User.model.js
+26. Use mongodb middlewear in user.model.js like "pre" and also used "methods" to declare own method
+27. Wrote access and refresh tokens strings(it can be any random string) in .env file and wrote methods of jwt for this in user.model.js
+28. Install cloudinary(here we are uploading files) and multer(we use it to upload files like img, video, pdf another one we can use is expressfile to upload file)
+29. In this project, We will keep file on our server and then will upload it to cloudinary, so wrote code accordingly in cloudinary.js
