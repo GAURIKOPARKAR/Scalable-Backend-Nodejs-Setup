@@ -39,3 +39,19 @@ app.use() is nothing but a middleware.
 27. Wrote access and refresh tokens strings(it can be any random string) in .env file and wrote methods of jwt for this in user.model.js
 28. Install cloudinary(here we are uploading files) and multer(we use it to upload files like img, video, pdf another one we can use is expressfile to upload file)
 29. In this project, We will keep file on our server and then will upload it to cloudinary, so wrote code accordingly in cloudinary.js
+30. Wrote multer code in multer.middleware.js
+31. Created user.controller.js in controllers folder
+
+'''routes define the endpoints of your application and map HTTP requests to controller functions, while controllers contain the logic to handle requests and generate responses.'''
+
+'''Routers in Express.js help to organize routes and controllers into separate modules for better code organization and maintainability.'''
+
+32. Created user.routes.js in routes folder
+
+'''controllers are nothing but functions we want to execute on specific route( route example =  "/users") '''
+
+'''In Express.js, a router created by Router is an object that helps to organize route handlers. It provides a way to group related routes together under a common path prefix. Routers can be thought of as mini-applications within your main Express application, allowing you to modularize your route handling code.'''
+
+'''router.route() is a method in Express.js that allows you to chain route handlers for a specific route. It provides a cleaner and more concise way to define multiple HTTP methods (such as GET, POST, PUT, DELETE) for the same route.'''
+
+33. imported and use routes in app.js

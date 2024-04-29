@@ -1,7 +1,14 @@
+/*The purpose of asyncHandler is to wrap around 
+asynchronous route handlers (such as those used in Express.js)
+ and automatically handle any errors that occur during their 
+ execution. This helps to avoid repetitive error handling code
+  in each route handler and promotes cleaner and more 
+  maintainable code. */
+
 const asyncHandler= (requestHandler) =>{
-    async (request, response, next)=>{
+    return async (request, response, next)=>{
         try {
-            await requestHandler(request,response, next)
+           await requestHandler(request,response, next)
             
         } catch (error) {
 
@@ -13,3 +20,4 @@ const asyncHandler= (requestHandler) =>{
 
     }
 }
+export default asyncHandler;
