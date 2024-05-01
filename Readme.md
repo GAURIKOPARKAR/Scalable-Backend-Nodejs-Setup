@@ -16,7 +16,7 @@ For adding that on eg. cloudinary we first keep it at our server i.e backend and
 Install nodemon, which will keep restarting server if any change is introduced.(-D or -Dev dependency means development dependency)
 9. Added "dev": "nodemon src/index.js" in package.json
 10. Created folders in src "controllers db models utils middlewares routes"
-11. Created account on MongoDB Atlas(cloud mongobd) and created a project there.
+11. Created account on MongoDB Atlas(cloud mongodb) and created a project there.
 12. Set env files with variables like port and mongodb project url
 13. Install mongoose, express and dotenv(application is going to load by environment variable, so this pkg is required)
 14. Wrote variable value and export it in constants.js because we dont want to write variable value everywhere, will use variable name in other files so, in future if we need to change it we dont need to change it everywhere.
@@ -55,3 +55,5 @@ app.use() is nothing but a middleware.
 '''router.route() is a method in Express.js that allows you to chain route handlers for a specific route. It provides a cleaner and more concise way to define multiple HTTP methods (such as GET, POST, PUT, DELETE) for the same route.'''
 
 33. imported and use routes in app.js
+
+34. 
