@@ -1,4 +1,4 @@
-class apiRrsponse{
+class apiResponse{
     constructor(
         statusCode,data,message="success"
     ){
@@ -9,3 +9,4 @@ class apiRrsponse{
 
     }
 }
+export default apiResponse

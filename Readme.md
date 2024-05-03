@@ -56,4 +56,6 @@ app.use() is nothing but a middleware.
 
 33. imported and use routes in app.js
 
-34. 
+34. Added multer middlewear in user.routes.js
+35. Wrote register user logic in user.controller.js in registerUser()
+36. 
