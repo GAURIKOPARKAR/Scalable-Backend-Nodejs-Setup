@@ -58,4 +58,5 @@ app.use() is nothing but a middleware.
 
 34. Added multer middlewear in user.routes.js
 35. Wrote register user logic in user.controller.js in registerUser()
-36. 
+36. Wrote login user logic in same file
+37. Created authenticacation middleware i.e auth.middleware.js in middleware folder

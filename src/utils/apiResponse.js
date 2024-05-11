@@ -1,3 +1,4 @@
+
 class apiResponse{
     constructor(
         statusCode,data,message="success"
