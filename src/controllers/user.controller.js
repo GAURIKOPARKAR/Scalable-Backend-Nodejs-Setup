@@ -67,7 +67,7 @@ const registerUser = asyncHandler(async (req, res) => {
     password,
   });
 
-  const user = await newUser.save();
+  const user = await newUser.save()
 
   if (!user) {
     throw new apiError(500, "Error creating user");
@@ -78,18 +78,20 @@ const registerUser = asyncHandler(async (req, res) => {
 
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password, username } = req.body;
-
-  if (!email || !username) {
+  console.log(req.body)
+  if (!(email || username)) {
     throw new apiError(400, "email or username is required");
   }
   //user is like an object of User model which can access methods of User model.
   const user = await User.findOne({
     $or: [{ username: username }, { email: email }],
   });
+  console.log(user)
   if (!user) {
     throw new apiError(404, "this user does not exist");
   }
   const correctPassword = await user.isPasswordCorrect(password);
+  console.log(correctPassword)
   if (!correctPassword) {
     throw new apiError(401, "Incorrect Credentials");
   }
@@ -114,7 +116,25 @@ const loginUser = asyncHandler(async (req, res) => {
 });
 
 const logOutUser = asyncHandler(async (req, res)=>{
-  
+  await User.findByIdAndUpdate(req.user._id,
+    {
+      $unset: {
+        refreshToken: 1 // this removes the field from document
+    }
+    },{
+      new:true
+    })
+   
+    const options = {
+      httpOnly: true,
+      secure: true
+  }
+
+  return res
+  .status(200)
+  .clearCookie("accessToken", options)
+  .clearCookie("refreshToken", options)
+  .json(new ApiResponse(200, {}, "User logged Out"))
 })
 
-export { registerUser, loginUser };
+export { registerUser, loginUser, logOutUser };
