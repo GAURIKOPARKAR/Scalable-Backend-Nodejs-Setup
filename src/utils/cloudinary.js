@@ -15,7 +15,7 @@ cloudinary.config({
   secure:true
 });
 
-const uploadOnCloudinary = async (localFilePath) => {
+const uploadonCloudinary = async (localFilePath) => {
     try {
         if (!localFilePath) return null
         //upload the file on cloudinary
@@ -33,6 +33,31 @@ const uploadOnCloudinary = async (localFilePath) => {
     }
 }
 
+const deleteFromCloudinary = async (userFileUrl) => {
+    try {
+        if (!userFileUrl) return null;
+
+        // Extract the public ID from the URL
+        const publicIdMatch = userFileUrl.match(/\/v\d+\/(.+)\.\w+$/);
+        if (!publicIdMatch) {
+            console.error("Invalid Cloudinary URL");
+            return null;
+        }
+
+        const publicId = publicIdMatch[1];
+        console.log("Public ID:", publicId);
+
+        const response = await cloudinary.uploader.destroy(publicId);
+        console.log("Response from Cloudinary:", response);
+        return response;
+
+    } catch (error) {
+        console.error("Error deleting from Cloudinary:", error);
+        return null;
+    }
+}
 
 
-export default uploadOnCloudinary
+
+
+export {uploadonCloudinary , deleteFromCloudinary}

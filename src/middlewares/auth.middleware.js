@@ -18,7 +18,8 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
         username:this.username,
         email:this.email,
     */
-    const decodedToken = await jwt.verify(
+   /*this line of code verifies the authenticity of a JWT using a secret key and extracts the information contained within the JWT payload for further processing in the application. */
+    const decodedToken = jwt.verify(
       token,
       process.env.ACCESS_TOKEN_SECRET
     );
